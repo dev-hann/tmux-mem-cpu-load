@@ -92,7 +92,7 @@ std::string cpu_string( CPU_MODE cpu_mode, unsigned int cpu_usage_delay, unsigne
   oss.fill( ' ' );
   oss << "CPU: ";
   oss << std::right << percentage * multiplier;
-  oss << "%";
+  oss << "% ";
   if( use_colors )
   {
     if( use_powerline_left )
@@ -247,8 +247,8 @@ int main( int argc, char** argv )
 
   MemoryStatus memory_status;
   mem_status( memory_status );
-  std::cout << cpu_string( cpu_mode, cpu_usage_delay, graph_lines, use_colors, use_powerline_left, use_powerline_right )
-    << mem_string( memory_status, mem_mode, use_colors, use_powerline_left, use_powerline_right )
+  std::cout << mem_string( memory_status, mem_mode, use_colors, use_powerline_left, use_powerline_right )
+    << cpu_string( cpu_mode, cpu_usage_delay, graph_lines, use_colors, use_powerline_left, use_powerline_right )
     << load_string( use_colors, use_powerline_left, use_powerline_right, averages_count );
 
   std::cout << std::endl;
