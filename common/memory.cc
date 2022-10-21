@@ -80,7 +80,7 @@ std::string mem_string( const MemoryStatus & mem_status,
     // Calculate the percentage of used memory
     const float percentage_mem = mem_status.used_mem /
       static_cast<float>( mem_status.total_mem ) * 100.0;
-
+    oss << "RAM: "
     oss << percentage_mem << '%';
     break;
     }
