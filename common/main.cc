@@ -104,7 +104,7 @@ std::string cpu_string( CPU_MODE cpu_mode, unsigned int cpu_usage_delay, unsigne
     }
   }
 
-  return "CPU:"+ oss.str();
+  return oss.str();
 }
 
 void print_help()
