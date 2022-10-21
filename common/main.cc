@@ -89,7 +89,8 @@ std::string cpu_string( CPU_MODE cpu_mode, unsigned int cpu_usage_delay, unsigne
   oss.width( 15 );
   oss.setf( std::ios::fixed, std::ios::floatfield );
   oss.precision( 1 );
-  oss.fill( 'CPU: ' );
+  oss.fill( ' ' );
+  oss << "CPU: ";
   oss << std::right << percentage * multiplier;
   oss << "%";
   if( use_colors )
@@ -104,7 +105,7 @@ std::string cpu_string( CPU_MODE cpu_mode, unsigned int cpu_usage_delay, unsigne
     }
   }
 
-  return oss.str();
+  return " CPU:"+oss.str();
 }
 
 void print_help()
